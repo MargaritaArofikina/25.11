@@ -22,7 +22,7 @@ int main(){
 			}
 		}
 		if (*(used + i) == true) {
-			if (*(used + 2 * i + 1) == true) cout << i << " " << 2 * i + 1 << endl;
+			if (*(used + 2 * i + 1) == true) cout << i << endl;
 		}
 	}
 
