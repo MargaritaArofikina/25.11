@@ -5,38 +5,39 @@ using namespace std;
 
 int main(){
 
-	int n,max,min,k,p;
+	int n, min, max, a, b,p;
 	cin >> n;
+	cout << endl;
 
-	max = 0;
+	min = 1;
+	max = 9;
+	b = 0;
+
 	
-	k = 1;
-
-	for (int i = 1; i <= n - 1; i++){
-		for (int j = 1; j <= n - i; j++){
-			k *= 10;
+		for (int i = 1; i <= (n / 2 - 1); i++){
+			min *= 10;
+			max += 9 * min;
 		}
-		max += 9 * k;
-	}
-
-	p = 1;
-
-	for (int i = 1; i <= n - 1; i++){
-			p *= 10;
-		}
-	min = p + 1;
-		
-	for (int i = min; i <= max; i++){
-		for (int j = 1; j <= n / 2; j++){
-			int d = (n - j) * 10;
-			int s = 1;
-
-			if ((i / d) % s != (i%j) / (j / 10)) {
-				break;
+		for (int j = min; j <= max; j++){
+			a = j;
+			p = a;
+			for (int k = 1; p >= 1; k *= 10){
+				b += (p % 10)*min / k;
+				p /= 10;
 			}
-			if (j == n / 2) cout << i<< endl;
+			if (n % 2 == 0){
+				cout << a << b << endl;
+			}
+			else{
+				for (int i = 0; i <= 9; i++){
+					cout << a << i << b << endl;
+				}
+			}
 		}
-	}
+
+		
+
+		
 
 	return 0;
 }
