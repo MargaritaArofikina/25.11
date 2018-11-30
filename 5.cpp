@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void massive(int* arr, int n, int k){
+void massive(int* arr, int n, int k){   //программа эффективная, потому что работает за O(n).
 
 	int m = 1;
 
